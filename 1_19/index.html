@@ -163,8 +163,8 @@
         async function predict() {
             // predict can take in an image, video or canvas html element
             const prediction = await model.predict(webcam.canvas);
-            let 주간확율 = prediction[0].probability;
-            console.log('주간확율', 주간확율);
+            let 주간확률 = prediction[0].probability;
+            console.log('주간확률', 주간확률);
             for (let i = 0; i < maxPredictions; i++) {
                 const classPrediction =
                     prediction[i].className + ": " + prediction[i].probability.toFixed(2);
