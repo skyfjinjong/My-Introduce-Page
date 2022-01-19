@@ -18,7 +18,7 @@
             font-family: 'Ubuntu', sans-serif;
         }
         a {
-            color: #52796f;;
+            color: #52796f;
         }
         h1 {
             font-family: 'Ubuntu', sans-serif;
@@ -56,6 +56,11 @@
                 <li><a href="../1_14/3.html">js</a></li>
                 <li><a href="javascript/event.html">event</a></li>
                 <li><a href="javascript/datatype.html">datatype</a></li>
+                <li><a href="javascript/variable.html">variable</a></li>
+                <li><a href="javascript/boolean.html">boolean</a></li>
+                <li><a href="javascript/array.html">array</a></li>
+                <li><a href="javascript/loop.html">loop</a></li>
+                <li><a href="javascript/function.html">function</a></li>
             </ol>
             <ul>
                 <li id="font1">Lorem ipsum</li>
@@ -67,14 +72,28 @@
         </div>
         <div>
             <h2>web</h2>
-            <input type="button" value="dark" onclick="
-                document.querySelector('body').style.backgroundColor='black';
-                document.querySelector('body').style.color='white';
+            <script>
+                let target = document.querySelector('body');
+                let as = document.querySelectorAll('a');
+            </script>
+            <input type="button" value="night" onclick="
+                if(this.value==='night'){
+                    this.value = 'day'
+                    target.style.backgroundColor='black';
+                    target.style.color='white';
+                    for(let i=0; i<as.length; i++){
+                        as[i].style.color='white';
+                    }
+                }
+                else{
+                    this.value = 'night';
+                    target.style.backgroundColor='#cad2c5';
+                    target.style.color='#2F3E46';
+                    for(let i=0; i<as.length; i++){
+                        as[i].style.color='#52796f';
+                    }
+                }
             ">
-            <input type="button" value="reset" onclick="
-            document.querySelector('body').style.backgroundColor='#cad2c5';
-            document.querySelector('body').style.color='#2F3E46';
-        ">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et beatae, deleniti veritatis doloremque quibusdam minima quam fugiat recusandae nemo maxime laudantium non assumenda rem ipsam nulla. Odio vero porro ex odit! Molestiae in totam vitae velit voluptatem et culpa explicabo similique numquam eos! Eum, sequi. Ab et perferendis amet, nostrum alias, animi ratione odio itaque maiores aut, odit modi magnam est voluptatem placeat similique recusandae unde libero perspiciatis quasi! Velit recusandae inventore quo, reiciendis eveniet accusantium? Cum consectetur rerum reprehenderit placeat voluptas sit. Rerum iusto tenetur, atque sit ipsum quasi voluptatibus nihil provident cupiditate optio blanditiis labore placeat eius quis quidem obcaecati corporis deserunt itaque veniam deleniti quod. Tenetur nesciunt saepe ipsum quam non perspiciatis amet ducimus iusto, deleniti tempore incidunt quae ipsa quo sint sapiente velit minima aut maiores architecto placeat delectus ab consequatur modi! Velit consequatur sed placeat aspernatur quia aperiam exercitationem sint est accusantium perspiciatis, atque, esse quasi libero impedit, obcaecati maiores vel vitae. Laboriosam, debitis. Odit incidunt cumque blanditiis delectus obcaecati repellendus fugiat adipisci deserunt explicabo vitae suscipit veritatis, saepe culpa consequuntur accusamus fuga ratione assumenda dolores inventore. Vero quibusdam iure nulla in ipsa sapiente laborum minus numquam repudiandae inventore quam, qui, exercitationem facilis ab tenetur asperiores. Ipsum amet qui at ex nobis eveniet beatae, libero inventore repellendus recusandae rerum eligendi blanditiis vitae, fuga ab. Natus, deleniti! Vitae expedita aut nam qui accusantium recusandae, animi rerum officia veritatis nisi quod, libero molestiae autem iure consequatur aperiam tempore placeat suscipit, repudiandae magnam optio? Iure tempora quisquam sed nihil. Minus quidem id reprehenderit ipsa quisquam natus nemo nam quo illum possimus molestiae consequuntur quam laborum ut, ratione provident quod! Adipisci, assumenda natus? Delectus iure ex et possimus eveniet temporibus minima eaque aliquid velit autem aut mollitia beatae qui eligendi ea culpa corrupti nemo nisi, earum inventore. Atque inventore non minus nesciunt soluta impedit asperiores, nobis a maiores. Id nisi, eum quam, consequatur provident quo distinctio voluptatem aliquam velit tempore sunt quae libero debitis. Amet facilis, reiciendis iure quam officia molestias. Error ex magni quis inventore excepturi asperiores. Porro iure soluta cupiditate fuga, adipisci natus, dolorum est veritatis quod officiis, beatae cumque qui omnis neque ad assumenda eius. Repudiandae, amet architecto vitae commodi quisquam pariatur excepturi natus. Provident aut commodi voluptatum quisquam nisi corporis, odit et! Officia officiis possimus quaerat, rerum laborum eveniet aliquam eum, culpa at asperiores consequuntur non velit laudantium suscipit, iure delectus dolorum perspiciatis aspernatur? Suscipit nemo atque ex adipisci cum. Omnis reiciendis explicabo nihil voluptate nam. Ratione facere ducimus debitis eaque numquam exercitationem sequi saepe magnam, quod nisi reprehenderit modi voluptatem accusamus dolor? Animi eius perferendis, vel consequuntur quasi repellat consequatur, doloribus ratione nemo quae optio sint nostrum commodi et alias minima in sit vero quo est ab amet ea officiis? At, quo, ratione cupiditate voluptate sunt nostrum tempore voluptas perferendis consequatur voluptatibus autem necessitatibus, dolores iure accusantium quidem obcaecati tempora optio similique dolorem rerum numquam nesciunt. Officia, fuga asperiores! Neque laboriosam deserunt corrupti, voluptatem itaque enim voluptate sed explicabo ducimus eligendi porro ipsam possimus.</p>
         </div>
     </div>
