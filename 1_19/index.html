@@ -61,6 +61,7 @@
                 <li><a href="javascript/array.html">array</a></li>
                 <li><a href="javascript/loop.html">loop</a></li>
                 <li><a href="javascript/function.html">function</a></li>
+                <li><a href="javascript/ai.html">AI</a></li>
             </ol>
             <ul>
                 <li id="font1">Lorem ipsum</li>
@@ -73,29 +74,103 @@
         <div>
             <h2>web</h2>
             <script>
-                let target = document.querySelector('body');
-                let as = document.querySelectorAll('a');
+                function 주간야간토글(self){
+                    let target = document.querySelector('body');
+                    let as = document.querySelectorAll('a');
+                    if(self.value==='night'){
+                        target.style.backgroundColor='black';
+                        target.style.color='white';
+                        for(let i=0; i<as.length; i++){
+                            as[i].style.color='white';
+                        }
+                        self.value = 'day'
+                    }
+                    else{
+                        target.style.backgroundColor='#cad2c5';
+                        target.style.color='#2F3E46';
+                        for(let i=0; i<as.length; i++){
+                            as[i].style.color='#52796f';
+                        }
+                        self.value = 'night';
+                    }
+                }
+                speechSynthesis.speak(new SpeechSynthesisUtterance('축하합니다. ㅎㅎ '));
             </script>
-            <input type="button" value="night" onclick="
-                if(this.value==='night'){
-                    this.value = 'day'
-                    target.style.backgroundColor='black';
-                    target.style.color='white';
-                    for(let i=0; i<as.length; i++){
-                        as[i].style.color='white';
-                    }
-                }
-                else{
-                    this.value = 'night';
-                    target.style.backgroundColor='#cad2c5';
-                    target.style.color='#2F3E46';
-                    for(let i=0; i<as.length; i++){
-                        as[i].style.color='#52796f';
-                    }
-                }
-            ">
+            <input type="button" value="night" onclick="주간야간토글(this)">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et beatae, deleniti veritatis doloremque quibusdam minima quam fugiat recusandae nemo maxime laudantium non assumenda rem ipsam nulla. Odio vero porro ex odit! Molestiae in totam vitae velit voluptatem et culpa explicabo similique numquam eos! Eum, sequi. Ab et perferendis amet, nostrum alias, animi ratione odio itaque maiores aut, odit modi magnam est voluptatem placeat similique recusandae unde libero perspiciatis quasi! Velit recusandae inventore quo, reiciendis eveniet accusantium? Cum consectetur rerum reprehenderit placeat voluptas sit. Rerum iusto tenetur, atque sit ipsum quasi voluptatibus nihil provident cupiditate optio blanditiis labore placeat eius quis quidem obcaecati corporis deserunt itaque veniam deleniti quod. Tenetur nesciunt saepe ipsum quam non perspiciatis amet ducimus iusto, deleniti tempore incidunt quae ipsa quo sint sapiente velit minima aut maiores architecto placeat delectus ab consequatur modi! Velit consequatur sed placeat aspernatur quia aperiam exercitationem sint est accusantium perspiciatis, atque, esse quasi libero impedit, obcaecati maiores vel vitae. Laboriosam, debitis. Odit incidunt cumque blanditiis delectus obcaecati repellendus fugiat adipisci deserunt explicabo vitae suscipit veritatis, saepe culpa consequuntur accusamus fuga ratione assumenda dolores inventore. Vero quibusdam iure nulla in ipsa sapiente laborum minus numquam repudiandae inventore quam, qui, exercitationem facilis ab tenetur asperiores. Ipsum amet qui at ex nobis eveniet beatae, libero inventore repellendus recusandae rerum eligendi blanditiis vitae, fuga ab. Natus, deleniti! Vitae expedita aut nam qui accusantium recusandae, animi rerum officia veritatis nisi quod, libero molestiae autem iure consequatur aperiam tempore placeat suscipit, repudiandae magnam optio? Iure tempora quisquam sed nihil. Minus quidem id reprehenderit ipsa quisquam natus nemo nam quo illum possimus molestiae consequuntur quam laborum ut, ratione provident quod! Adipisci, assumenda natus? Delectus iure ex et possimus eveniet temporibus minima eaque aliquid velit autem aut mollitia beatae qui eligendi ea culpa corrupti nemo nisi, earum inventore. Atque inventore non minus nesciunt soluta impedit asperiores, nobis a maiores. Id nisi, eum quam, consequatur provident quo distinctio voluptatem aliquam velit tempore sunt quae libero debitis. Amet facilis, reiciendis iure quam officia molestias. Error ex magni quis inventore excepturi asperiores. Porro iure soluta cupiditate fuga, adipisci natus, dolorum est veritatis quod officiis, beatae cumque qui omnis neque ad assumenda eius. Repudiandae, amet architecto vitae commodi quisquam pariatur excepturi natus. Provident aut commodi voluptatum quisquam nisi corporis, odit et! Officia officiis possimus quaerat, rerum laborum eveniet aliquam eum, culpa at asperiores consequuntur non velit laudantium suscipit, iure delectus dolorum perspiciatis aspernatur? Suscipit nemo atque ex adipisci cum. Omnis reiciendis explicabo nihil voluptate nam. Ratione facere ducimus debitis eaque numquam exercitationem sequi saepe magnam, quod nisi reprehenderit modi voluptatem accusamus dolor? Animi eius perferendis, vel consequuntur quasi repellat consequatur, doloribus ratione nemo quae optio sint nostrum commodi et alias minima in sit vero quo est ab amet ea officiis? At, quo, ratione cupiditate voluptate sunt nostrum tempore voluptas perferendis consequatur voluptatibus autem necessitatibus, dolores iure accusantium quidem obcaecati tempora optio similique dolorem rerum numquam nesciunt. Officia, fuga asperiores! Neque laboriosam deserunt corrupti, voluptatem itaque enim voluptate sed explicabo ducimus eligendi porro ipsam possimus.</p>
         </div>
     </div>
+    
+
+
+
+
+
+
+
+
+
+
+    <div>Teachable Machine Image Model</div>
+    <button type="button" onclick="init()">Start</button>
+    <div id="webcam-container"></div>
+    <div id="label-container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script type="text/javascript">
+        // More API functions here:
+        // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+        // the link to your model provided by Teachable Machine export panel
+        const URL = "https://teachablemachine.withgoogle.com/models/sfIzlDUhy/";
+
+        let model, webcam, labelContainer, maxPredictions;
+
+        // Load the image model and setup the webcam
+        async function init() {
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+
+            // load the model and metadata
+            // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+            // or files from your local hard drive
+            // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+
+            // Convenience function to setup a webcam
+            const flip = true; // whether to flip the webcam
+            webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+            await webcam.setup(); // request access to the webcam
+            await webcam.play();
+            window.requestAnimationFrame(loop);
+
+            // append elements to the DOM
+            document.getElementById("webcam-container").appendChild(webcam.canvas);
+            labelContainer = document.getElementById("label-container");
+            for (let i = 0; i < maxPredictions; i++) { // and class labels
+                labelContainer.appendChild(document.createElement("div"));
+            }
+        }
+
+        async function loop() {
+            webcam.update(); // update the webcam frame
+            await predict();
+            window.requestAnimationFrame(loop);
+        }
+
+        // run the webcam image through the image model
+        async function predict() {
+            // predict can take in an image, video or canvas html element
+            const prediction = await model.predict(webcam.canvas);
+            let 주간확율 = prediction[0].probability;
+            console.log('주간확율', 주간확율);
+            for (let i = 0; i < maxPredictions; i++) {
+                const classPrediction =
+                    prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+                labelContainer.childNodes[i].innerHTML = classPrediction;
+            }
+        }
+    </script>
 </body>
 </html>
