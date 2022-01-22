@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Island+Moments&family=Roboto+Mono:ital,wght@0,100;1,700&family=Rubik+Beastly&family=Ubuntu:ital,wght@1,500&display=swap" rel="stylesheet">
+
+    <title>About me</title>
+    <style>
+        body {
+            background-color: #fef9ef;
+            color:#bc4749;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        a {
+            color: #bc4749;
+        }
+        #left_side > ul > li > a{
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        #left_side > ul > li{
+            padding-bottom: 30px;
+        }
+        ul{
+            list-style: none;
+            padding-left: 0;
+            text-align: center;
+        }
+        p {
+            font-family: 'Roboto Mono', monospace;
+        }
+        #content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+        }
+        #left_side {
+            background-color: #ffcb77;
+            text-align: center;
+            padding : 10px;
+            padding-block: 150px;
+        }
+        #right_side {
+            margin : 50px;
+            margin-top: 150px;
+        }
+        #profile_img {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .info {
+            font-size: 18px;
+        }
+        .sub_title{
+            font-size: 30px;
+        }
+        #font1 { font-family: 'Ubuntu', sans-serif; }
+        #font2 { font-family: 'Rubik Beastly', cursive; }
+        #font3 { font-family: 'Roboto Mono', monospace; }
+        #font4 { font-family: 'Island Moments', cursive; }
+        #font5 { font-family: 'Dongle', sans-serif; }
+    </style>
+    <script>
+        function 주간야간토글(self){
+            let target = document.querySelector('body');
+            let target_ls = document.querySelector('left_side');
+            let as = document.querySelectorAll('a');
+            if(self.value==='night'){
+                target.style.backgroundColor='#5c677d';
+                target.style.color='white';
+                for(let i=0; i<as.length; i++){
+                    as[i].style.color='#001233';
+                }
+                self.value = 'day'
+            }
+            else{
+                target.style.backgroundColor='#fef9ef';
+                target.style.color='#bc4749';
+                for(let i=0; i<as.length; i++){
+                    as[i].style.color='#bc4749';
+                }
+                self.value = 'night';
+            }
+        }
+        //speechSynthesis.speak(new SpeechSynthesisUtterance('안녕하세요! 저는 프론트엔드 직무에 관심이 많은 전진종입니다. 잘 부탁드려요~'));
+    </script>
+</head>
+<body>
+    
+    <div id="content">
+        <div id="left_side">
+            <div id="profile_img">
+                <img src = "/img/tmp.png" alt="JJJ" height=260 width=260>
+            </div>
+            <ul>
+                <li><a href="index.html">About me</a></li>
+                <li><a href="my_page/interest.html">Interests</a></li>
+                <li><a href="my_page/ai_track.html">To AI track</a></li>
+            </ul>
+            <input type="button" style="margin-top: 50px;" value="night" class="btn-warning" onclick="주간야간토글(this)">
+        </div>
+        <div id="right_side">
+            <p style="font-size: 60px; font-weight: bold; margin-bottom: 50px;">JEON JINJONG</p>
+            <p class="sub_title">HELLO ELICE</p>
+            <p class="info">안녕하세요! 프론트엔드 개발에 관심이 많은 전진종입니다. 만나서 반가워요!🤗 
+            </p>
+            <hr style="margin-top: 50px;">
+            <p class="sub_title">HOBBY</p>
+            <p class="info">저는 쉬는 날이면 주로 영화를 보는 편입니다! <br>가장 좋아하는 영화는 인터스텔라이지만 사실 장르 가리지 않고 모든 영화를 좋아합니다.😊
+            <br>영화 말고도 게임과 농구, 그리고 방탈출을 굉장히 즐겨하는 편이에요!<br>저와 같은 취미를 가지고 계신 분 혹시 계신가요? 🙌</p>
+            <hr style="margin-top: 50px;">
+            <p class="sub_title">FAVORITE</p>
+            <p class="info">제가 가장 좋아하는 음식은 치킨입니다. 🍗<br>굽네치킨을 가장 좋아하는데, 최근에 나온 불금치킨이 정말 맛있습니다!!!<br>그리고 탄산음료를 되게 좋아합니다. <br>하지만 건강을 지키기 위해 최근에는 줄이려고 노력하고 있습니다,,,🥲</p>
+            <hr style="margin-top: 50px;">
+            <p class="sub_title">OTHER</p>
+            <p class="info">수료하고 3개월 이내에 취뽀하고 싶습니다. 다같이 화이팅해요! 👊</p> 
+        </div>
+    </div>
+
+</body>
+</html>
