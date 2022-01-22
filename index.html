@@ -68,28 +68,35 @@
         #font5 { font-family: 'Dongle', sans-serif; }
     </style>
     <script>
-        function 주간야간토글(self){
+        function 주간야간토글(self) {
             let target = document.querySelector('body');
-            let target_ls = document.querySelector('left_side');
+            let target_ls = document.querySelector('#left_side');
+            let target_btn = document.querySelector('#day_change');
+            let img = document.querySelector('.p_img');
             let as = document.querySelectorAll('a');
-            if(self.value==='night'){
-                target.style.backgroundColor='#5c677d';
-                target.style.color='white';
-                for(let i=0; i<as.length; i++){
-                    as[i].style.color='#001233';
+            if (self.value === 'night') {
+                target_ls.style.backgroundColor = "#161a1d";
+                target.style.backgroundColor = '#5c677d';
+                target.style.color = 'white';
+                target_btn.style.backgroundColor = "#bee3db";
+                img.src = "img/tmp2.png";
+                for (let i = 0; i < as.length; i++) {
+                    as[i].style.color = '#89b0ae';
                 }
                 self.value = 'day'
             }
-            else{
-                target.style.backgroundColor='#fef9ef';
-                target.style.color='#bc4749';
-                for(let i=0; i<as.length; i++){
-                    as[i].style.color='#bc4749';
+            else {
+                target.style.backgroundColor = '#fef9ef';
+                target_ls.style.backgroundColor = "#ffcb77";
+                target.style.color = '#bc4749';
+                target_btn.style.backgroundColor = "#ffc107";
+                img.src = "img/tmp.png";
+                for (let i = 0; i < as.length; i++) {
+                    as[i].style.color = '#bc4749';
                 }
                 self.value = 'night';
             }
         }
-        //speechSynthesis.speak(new SpeechSynthesisUtterance('안녕하세요! 저는 프론트엔드 직무에 관심이 많은 전진종입니다. 잘 부탁드려요~'));
     </script>
 </head>
 <body>
@@ -97,14 +104,14 @@
     <div id="content">
         <div id="left_side">
             <div id="profile_img">
-                <img src = "img/tmp.png" alt="JJJ" height=260 width=260>
+                <img class="p_img" src = "img/tmp.png" alt="JJJ" height=260 width=260>
             </div>
             <ul>
                 <li><a href="index.html">About me</a></li>
                 <li><a href="my_page/interest.html">Interests</a></li>
                 <li><a href="my_page/ai_track.html">To AI track</a></li>
             </ul>
-            <input type="button" style="margin-top: 50px;" value="night" class="btn-warning" onclick="주간야간토글(this)">
+            <input type="button" id="day_change" style="margin-top: 50px;" value="night" class="btn-warning" onclick="주간야간토글(this)">
         </div>
         <div id="right_side">
             <p style="font-size: 60px; font-weight: bold; margin-bottom: 50px;">JEON JINJONG</p>
