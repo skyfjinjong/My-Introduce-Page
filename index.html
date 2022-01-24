@@ -36,6 +36,10 @@
         p {
             font-family: 'Roboto Mono', monospace;
         }
+        .link_logo {
+            display: flex;
+            justify-content: space-evenly;
+        }
         #content {
             display: grid;
             grid-template-columns: 300px 1fr;
@@ -54,6 +58,9 @@
         #profile_img {
             text-align: center;
             margin-bottom: 50px;
+        }
+        #day_change{
+            width: 60px;
         }
         .info {
             font-family: 'Gowun Dodum', sans-serif;
@@ -79,13 +86,20 @@
             let target_ls = document.querySelector('#left_side');
             let target_btn = document.querySelector('#day_change');
             let img = document.querySelector('.p_img');
+            let t_img = document.querySelector('.tistory_logo');
+            let g_img = document.querySelector('.github_logo');
+            let i_img = document.querySelector('.instagram_logo');
             let as = document.querySelectorAll('a');
             if (self.value === 'night') {
                 target_ls.style.backgroundColor = "#161a1d";
                 target.style.backgroundColor = '#5c677d';
                 target.style.color = 'white';
                 target_btn.style.backgroundColor = "#bee3db";
+                target_btn.style.border = "white";
                 img.src = "img/tmp2.png";
+                t_img.src = "img/tistory_night.png";
+                g_img.src = "img/github_night.png";
+                i_img.src = "img/instagram_night.png";
                 for (let i = 0; i < as.length; i++) {
                     as[i].style.color = '#89b0ae';
                 }
@@ -97,6 +111,9 @@
                 target.style.color = '#bc4749';
                 target_btn.style.backgroundColor = "#ffc107";
                 img.src = "img/tmp.png";
+                t_img.src = "img/tistory_day.png";
+                g_img.src = "img/github_day.png";
+                i_img.src = "img/instagram_day.png";
                 for (let i = 0; i < as.length; i++) {
                     as[i].style.color = '#bc4749';
                 }
@@ -117,7 +134,18 @@
                 <li><a href="my_page/interest.html">Interests</a></li>
                 <li><a href="my_page/ai_track.html">To AI track</a></li>
             </ul>
-            <input type="button" id="day_change" style="margin-top: 50px;" value="night" class="btn-warning" onclick="주간야간토글(this)">
+            <div class="link_logo">
+                <a href="https://jevelop.tistory.com/" target="_blank">
+                    <img class="tistory_logo" src="img/tistory_day.png" width="20px">
+                </a>
+                <a href="https://github.com/skyfjinjong" target="_blank">
+                    <img class="github_logo" src="img/github_day.png" width="20px">
+                </a>
+                <a href="https://instagram.com/tri_ple_j" target="_blank">
+                    <img class="instagram_logo" src="img/instagram_day.png" width="20px">
+                </a>
+                <input type="button" id="day_change"  value="night" class="btn-warning" onclick="주간야간토글(this)">
+            </div>
         </div>
         <div id="right_side">
             <h1 style="font-size: 60px; font-weight: bold; margin-bottom: 50px;">JEON JINJONG</h1>
